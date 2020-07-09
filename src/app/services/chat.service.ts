@@ -30,16 +30,21 @@ export class ChatService {
   login(proveedor: string) {
 
     if (proveedor === 'google'){
-      this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+      this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()).then(
+        (resp) => {
+          console.log(resp)
+        }
+
+      );
     } else {
-      this.afAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
+      this.afAuth.signInWithPopup(new auth.TwitterAuthProvider());
 
     }
   }
 
   logout() {
     this.usuario = {};
-    this.afAuth.auth.signOut();
+    this.afAuth.signOut();
   }
 
   cargarMensajes() {

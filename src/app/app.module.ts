@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { ChatComponent } from './components/chat/chat.component';
 import { FormsModule} from '@angular/forms';
 import { LoginComponent } from './comepnents/login/login.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { LoginComponent } from './comepnents/login/login.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    FormsModule
+    FormsModule, NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
